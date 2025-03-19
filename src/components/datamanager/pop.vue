@@ -23,15 +23,16 @@
             </div>
 
             <el-button type="primary" style="position: relative;top: -3%; left:60%;margin: 10px;"
-                v-on:click="close2()">取消</el-button>
+                v-on:click="close2()" class="button_color">取消</el-button>
             <el-button type="primary" style="position: relative;top: -3%; left:60%;margin: 10px;"
-                v-on:click="close1()">保存</el-button>
+                v-on:click="close1()" class="button_color">保存</el-button>
         </div>
         <div class="select_pages" v-if="select_pages1">
             <div class="tool_title" style="font-size: 20px; margin: 5px;">
                 请选择人员作为组员
             </div>
-            <div class="group_list" style="height: 75%;width: 95%;margin: 10px;">
+            <div  id="back_img"  class="group_list" style="height: 75%;width: 95%;margin: 10px;">
+               
                 <el-scrollbar>
                     <el-collapse v-model="activeNames" accordion>
                         <el-checkbox-group v-model="select_employee_list">
@@ -51,9 +52,9 @@
             </div>
 
             <el-button type="primary" style="position: relative;top: -3%; left:60%;margin: 10px;"
-                v-on:click="close3()">取消</el-button>
+                v-on:click="close3()" class="button_color">取消</el-button>
             <el-button type="primary" style="position: relative;top: -3%; left:60%;margin: 10px;"
-                v-on:click="close4()">保存</el-button>
+                v-on:click="close4()" class="button_color">保存</el-button>
         </div>
         <div class="mapsite" id="mapsite">
 
@@ -79,7 +80,7 @@
                         <div class="group_control">
                             <div class="control_item" v-on:click="tools('select')"
                                 :class="this.toolstoggle == 'select' ? 'visited' : ''">
-                                <svg t="1717847459445" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                <!-- <svg t="1717847459445" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" p-id="5985" width="20" height="20">
                                     <path
                                         d="M504.448 519.552m-151.189333 0a151.189333 151.189333 0 1 0 302.378666 0 151.189333 151.189333 0 1 0-302.378666 0Z"
@@ -93,11 +94,12 @@
                                     <path
                                         d="M10.666667 519.552a32 32 0 0 1 32-32h98.922666a32 32 0 1 1 0 64H42.666667a32 32 0 0 1-32-32zM850.410667 519.552a32 32 0 0 1 32-32H981.333333a32 32 0 0 1 0 64h-98.922666a32 32 0 0 1-32-32z"
                                         fill="#111111" p-id="5989"></path>
-                                </svg>
+                                </svg> -->
+                                <img src="/public/定位.png" alt="" class="location">
                             </div>
                             <div class="control_item" v-on:click="tools('add')"
                                 :class="this.toolstoggle == 'add' ? 'visited' : ''">
-                                <svg t="1717847507199" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                <!-- <svg t="1717847507199" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" p-id="7003" width="20" height="20">
                                     <path
                                         d="M1024 972.8c0 28.275-22.925 51.2-51.2 51.2H51.2C22.922 1024 0 1001.075 0 972.8V51.2C0 22.922 22.922 0 51.2 0h921.6c28.275 0 51.2 22.922 51.2 51.2v921.6z m-51.2-870.4c0-28.277-22.925-51.2-51.2-51.2H102.4c-28.275 0-51.2 22.923-51.2 51.2v819.2c0 28.275 22.925 51.2 51.2 51.2h819.2c28.275 0 51.2-22.925 51.2-51.2V102.4z"
@@ -105,7 +107,8 @@
                                     <path
                                         d="M768 512c0 14.14-11.46 25.6-25.6 25.6H537.6v209.176c0 11.72-11.46 21.225-25.6 21.225s-25.6-9.505-25.6-21.225V537.6H281.6c-14.14 0-25.6-11.46-25.6-25.6s11.46-25.6 25.6-25.6h204.8V277.225C486.4 265.5 497.86 256 512 256s25.6 9.5 25.6 21.225V486.4h204.8c14.14 0 25.6 11.46 25.6 25.6z"
                                         p-id="7005"></path>
-                                </svg>
+                                </svg> -->
+                                <img src="/public/添加.png" alt="" class="location">
                             </div>
                             <div class="control_item" v-on:click="tools('update')"
                                 :class="this.toolstoggle == 'update' ? 'visited' : ''">
@@ -115,6 +118,7 @@
                                         d="M536.896 64l0 248.896-448 0 0 149.312 846.272 0L536.896 64zM487.104 960l0-248.896 448 0L935.104 561.792 88.896 561.792 487.104 960z"
                                         p-id="8086"></path>
                                 </svg>
+                                <img src="/public/更换.png" alt="" class="location">
                             </div>
                             <!-- <div class="control_item" v-on:click="tools('delete')"
                                 :class="this.toolstoggle == 'delete' ? 'visited' : ''">
@@ -143,7 +147,7 @@
                             <div class="group_control">
                                 <div class="control_item" v-on:click="tools1('selectemployee')"
                                     :class="this.toolstoggle == 'selectemployee' ? 'visited' : ''">
-                                    <svg t="1717847459445" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    <!-- <svg t="1717847459445" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" p-id="5985" width="20" height="20">
                                         <path
                                             d="M504.448 519.552m-151.189333 0a151.189333 151.189333 0 1 0 302.378666 0 151.189333 151.189333 0 1 0-302.378666 0Z"
@@ -157,11 +161,12 @@
                                         <path
                                             d="M10.666667 519.552a32 32 0 0 1 32-32h98.922666a32 32 0 1 1 0 64H42.666667a32 32 0 0 1-32-32zM850.410667 519.552a32 32 0 0 1 32-32H981.333333a32 32 0 0 1 0 64h-98.922666a32 32 0 0 1-32-32z"
                                             fill="#111111" p-id="5989"></path>
-                                    </svg>
+                                    </svg> -->
+                                    <img src="/public/绘图管理信息.png" alt="" class="location">
                                 </div>
                                 <div class="control_item" v-on:click="tools1('addemployee')"
                                     :class="this.toolstoggle == 'addemployee' ? 'visited' : ''">
-                                    <svg t="1717847507199" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    <!-- <svg t="1717847507199" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" p-id="7003" width="20" height="20">
                                         <path
                                             d="M1024 972.8c0 28.275-22.925 51.2-51.2 51.2H51.2C22.922 1024 0 1001.075 0 972.8V51.2C0 22.922 22.922 0 51.2 0h921.6c28.275 0 51.2 22.922 51.2 51.2v921.6z m-51.2-870.4c0-28.277-22.925-51.2-51.2-51.2H102.4c-28.275 0-51.2 22.923-51.2 51.2v819.2c0 28.275 22.925 51.2 51.2 51.2h819.2c28.275 0 51.2-22.925 51.2-51.2V102.4z"
@@ -169,16 +174,18 @@
                                         <path
                                             d="M768 512c0 14.14-11.46 25.6-25.6 25.6H537.6v209.176c0 11.72-11.46 21.225-25.6 21.225s-25.6-9.505-25.6-21.225V537.6H281.6c-14.14 0-25.6-11.46-25.6-25.6s11.46-25.6 25.6-25.6h204.8V277.225C486.4 265.5 497.86 256 512 256s25.6 9.5 25.6 21.225V486.4h204.8c14.14 0 25.6 11.46 25.6 25.6z"
                                             p-id="7005"></path>
-                                    </svg>
+                                    </svg> -->
+                                    <img src="/public/选择.png" alt="" class="location">
                                 </div>
                                 <div class="control_item" v-on:click="tools1('removeemployee')"
                                     :class="this.toolstoggle == 'removeemployee' ? 'visited' : ''">
-                                    <svg t="1717847577121" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    <!-- <svg t="1717847577121" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" p-id="9102" width="20" height="20">
                                         <path
                                             d="M789.8 282.3l-13.9-13.9c-3.8-3.9-8.8-5.8-13.9-5.8-5 0-10.1 1.9-13.9 5.8L511.3 505.1 274.6 268.4c-3.8-3.9-8.9-5.8-13.9-5.8s-10.1 1.9-13.9 5.8l-13.9 13.9c-7.6 7.7-7.6 20.2 0 27.9l236.7 236.7-222.9 222.7c-7.7 7.7-7.7 20.2 0 27.9l13.9 13.9c3.9 3.9 8.9 5.8 13.9 5.8s10.1-1.9 13.9-5.8l222.8-222.8L734 811.4c3.8 3.9 8.9 5.8 13.9 5.8 5.1 0 10.1-1.9 13.9-5.8l13.9-13.9c7.7-7.7 7.7-20.2 0-27.9L553.1 546.8l236.7-236.7c7.7-7.7 7.7-20.2 0-27.8z"
                                             fill="#666666" p-id="9103"></path>
-                                    </svg>
+                                    </svg> -->
+                                    <img src="/public/删除.png" alt="" class="location">
                                 </div>
                             </div>
                             <div class="group_list" style="height: 90%;">
@@ -207,14 +214,14 @@
                             </el-select>
                         </div>
                         <el-button type="primary" style="width: 60px; position: relative; left: 70%;top: 5%;"
-                            v-on:click="searchs()">搜索</el-button>
+                            v-on:click="searchs()" class="icon_research">搜索</el-button>
                     </div>
 
                 </div>
             </div>
             <div class="close">
                 <el-button type="primary" style="position: relative; left:74%;margin: 10px;"
-                    v-on:click="close()">关闭</el-button>
+                    v-on:click="close()" class="icon">关闭</el-button>
             </div>
         </div>
 
@@ -486,7 +493,7 @@ export default {
                 ],
                 popupTemplate: {
                     title: '名称',
-                    content: ` <img src="http://127.0.0.1:8000/static{avator}" alt="" style="width: 100px; height: 120px;">
+                    content: ` <img src="http://10.100.230.127:8000/static{avator}" alt="" style="width: 100px; height: 120px;">
                         <div><b>姓名</b>:   {name}</div>
                         <div><b>电话</b>:   {telephone}</div>
                         <div><b>家庭住址</b>:  {home}</div>
@@ -505,7 +512,7 @@ export default {
                 this.delete_select_list()
                 this.select_list = res.data.name
                 for (var i = 0; i < res.data.avator.length; i++) {
-                    this.select_list1.push('http://127.0.0.1:8000/static' + res.data.avator[i])
+                    this.select_list1.push('/api/static' + res.data.avator[i])
                 }
                 this.$message.success('获取人员成功')
                 this.select_list2 = res.data.tele
@@ -725,7 +732,7 @@ export default {
                             re.select_list4 = []
                             for (var i = 0; i < graphic.length; i++) {
                                 re.select_list.push(graphic[i].graphic.attributes.name)
-                                re.select_list1.push('http://127.0.0.1:8000/static' + graphic[i].graphic.attributes.avator)
+                                re.select_list1.push('/api/static' + graphic[i].graphic.attributes.avator)
                                 re.select_list2.push(graphic[i].graphic.attributes.telephone)
                                 re.select_list3.push(graphic[i].graphic.attributes.home)
                                 if (graphic[i].graphic.attributes.groupid == 0) {
@@ -911,7 +918,7 @@ function searchemployee(geometry, re) {
             re.delete_select_list()
             for (var i = 0; i < select_list.length; i++) {
                 re.select_list.push(select_list[i].attributes.name)
-                re.select_list1.push('http://127.0.0.1:8000/static' + select_list[i].attributes.avator)
+                re.select_list1.push('/api/static' + select_list[i].attributes.avator)
                 re.select_list2.push(select_list[i].attributes.telephone)
                 re.select_list3.push(select_list[i].attributes.home)
                 if (select_list[i].attributes.groupid == 0) {
@@ -956,10 +963,27 @@ function createPolygon(events) {
 }
 </script>
 <style scoped>
+.icon_research{
+    background-color: #1270A6;
+}
+.location{
+    object-fit: contain;
+    position: relative;
+    right: 90px;
+}
 :deep(.el-select__wrapper) {
     background-color: white;
 }
-
+.icon{
+    background-color:  #1270A6;
+}
+.background_img{
+    background-image: url(/public/24.jpg) ;
+    object-fit: contain;
+    height: auto;
+    width: 80px;
+    opacity: 0.8;
+}
 .select_pages {
     padding: 10px;
     background-color: white;
@@ -974,7 +998,9 @@ function createPolygon(events) {
 
 
 }
-
+.button_color{
+    background-color:  #1270A6;
+}
 .list_item {
     font-size: 16px;
     font-family: '宋体';
@@ -1020,14 +1046,22 @@ function createPolygon(events) {
     display: flex;
     flex-direction: column;
 }
-
+#back_img{
+    background-image: url(/public/25.jpg) ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
 .group_list {
     width: 100%;
     height: 80%;
     flex: 1;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: none;
+    background-image: url(/public/25.jpg) ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
 }
 
 .layercontrol {
@@ -1084,7 +1118,7 @@ function createPolygon(events) {
     font-weight: 700;
     font-size: 16px;
     font-family: '楷体';
-
+    border: none;
 }
 
 .control_tool {

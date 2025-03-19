@@ -4,8 +4,8 @@
         <el-drawer v-model="drawer" title="I am the title">
             <span>Hi, there!</span>
         </el-drawer>
-        <el-drawer v-model="this.$store.state.drawer" size="40%" :modal="drawer" modal-class="custom-modal"
-            :open="initEcharts()">
+        <el-drawer v-model="this.$store.state.drawer" size="45%" :modal="drawer" modal-class="custom-modal"
+            :open="initEcharts()" >
             <template #header>
                 <h3>雪情预测</h3>
             </template>
@@ -92,8 +92,8 @@
             </template>
             <template #footer>
                 <div style="flex: auto">
-                    <el-button @click="cancelClick">cancel</el-button>
-                    <el-button type="primary" @click="confirmClick">confirm</el-button>
+                    <el-button @click="cancelClick">取消</el-button>
+                    <el-button type="primary" @click="confirmClick">确定</el-button>
                 </div>
 
             </template>
@@ -632,7 +632,9 @@ export { map, view }
     background-color: transparent;
     pointer-events: none;
 }
-
+::v-deep(.el-drawer__body){
+    overflow: hidden;
+}
 ::v-deep(.custom-modal>div) {
     pointer-events: auto;
 }

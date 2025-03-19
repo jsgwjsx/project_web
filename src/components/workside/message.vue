@@ -4,8 +4,8 @@
             <div class="title">任务模块</div>
         </div>
         <div class="navbar">
-            <div v-on:click="styleset(1)">正进行</div>
-            <div v-on:click="styleset(2)">已完成</div>
+            <div v-on:click="styleset(1)" class="statu">进行中</div>
+            <div v-on:click="styleset(2)"class="statu">已完成</div>
             <div class="border" :class="[isactive == 1 ? 'two' : '', isactive == 2 ? 'three' : '']"></div>
         </div>
         <div class="body">
@@ -190,8 +190,9 @@ export default {
 
         },
         Machinelocation() {
-            socket = new WebSocket('ws://127.0.0.1:8000/ws/geolocation/pcadmin')
+            socket = new WebSocket('ws://10.100.230.127:8000/ws/geolocation/pcadmin')
             socket.onopen = (events) => {
+                console.log(111)
                 //握手成功后的回调函数
                 this.$message.success('连接成功')
             }
@@ -353,6 +354,12 @@ function addPoints(newPoints) {
 }
 </script>
 <style scoped>
+.statu {
+    font-size: 14px; /* 调整字号为14px */
+    /* padding: 0 10px; 
+    cursor: pointer;
+    transition: color 0.3s ease;  */
+}
 .cards{
     width: 100%;
     height: 80%; 
@@ -418,7 +425,11 @@ function addPoints(newPoints) {
 :deep(.el-card__body) {
     width: calc(100%-8px);
     padding: 5px;
-    background-color:rgba(1, 138, 255, 0.3);
+    /* background-color:rgba(1, 138, 255, 0.3); */
+    background-color: rgba(31, 68, 95, 0.5); /* 加深背景 */
+   border-color: rgba(60, 254, 255, 0.5); /* 霓虹蓝边框 */
+   box-shadow: 0 0 25px rgba(60, 254, 255, 0.4); /* 增强光效 */
+   color: #FFFFFF; /* 纯白文字 */
     cursor: pointer;
     border: none;
     color: white;
@@ -460,7 +471,7 @@ function addPoints(newPoints) {
     position: relative;
     background-color: black;
     height: 2px;
-    width: 30px;
+    width: 40px; 
     top: 19px;
     left: -115px;
     transition: 0.5s;
@@ -501,22 +512,22 @@ function addPoints(newPoints) {
 
 .two {
     background-color: orange;
-    left: -80px;
+    left: -105px;
 }
 
 .three {
     background-color: #00CCFF;
-    left: -40px;
+    left: -50px;
 }
 
 .navbar>:nth-child(1):hover~.border {
     background-color: orange;
-    left: -80px;
+    left: -105px;
 }
 
 .navbar>:nth-child(2):hover~.border {
     background-color: #00CCFF;
-    left: -40px;
+    left: -50px;
 }
 
 .navbar>*:hover {

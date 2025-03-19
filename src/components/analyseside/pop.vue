@@ -4,19 +4,20 @@
             <div style="display: inline-block;position: relative;top: -5px;">人口密度评价分析模块</div>
         </div>
         <div class="gridcontrol">
-            <svg t="1712630190921" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            <!-- <svg t="1712630190921" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 p-id="2826" width="18" height="18">
                 <path
                     d="M928 42.666667h-149.333333a53.393333 53.393333 0 0 0-53.333334 53.333333v149.333333a53.393333 53.393333 0 0 0 53.333334 53.333334h149.333333a53.393333 53.393333 0 0 0 53.333333-53.333334V96a53.393333 53.393333 0 0 0-53.333333-53.333333z m10.666667 202.666666a10.666667 10.666667 0 0 1-10.666667 10.666667h-149.333333a10.666667 10.666667 0 0 1-10.666667-10.666667V96a10.666667 10.666667 0 0 1 10.666667-10.666667h149.333333a10.666667 10.666667 0 0 1 10.666667 10.666667zM586.666667 384H437.333333a53.393333 53.393333 0 0 0-53.333333 53.333333v149.333334a53.393333 53.393333 0 0 0 53.333333 53.333333h149.333334a53.393333 53.393333 0 0 0 53.333333-53.333333V437.333333a53.393333 53.393333 0 0 0-53.333333-53.333333z m10.666666 202.666667a10.666667 10.666667 0 0 1-10.666666 10.666666H437.333333a10.666667 10.666667 0 0 1-10.666666-10.666666V437.333333a10.666667 10.666667 0 0 1 10.666666-10.666666h149.333334a10.666667 10.666667 0 0 1 10.666666 10.666666z m330.666667-202.666667h-149.333333a53.393333 53.393333 0 0 0-53.333334 53.333333v149.333334a53.393333 53.393333 0 0 0 53.333334 53.333333h149.333333a53.393333 53.393333 0 0 0 53.333333-53.333333V437.333333a53.393333 53.393333 0 0 0-53.333333-53.333333z m10.666667 202.666667a10.666667 10.666667 0 0 1-10.666667 10.666666h-149.333333a10.666667 10.666667 0 0 1-10.666667-10.666666V437.333333a10.666667 10.666667 0 0 1 10.666667-10.666666h149.333333a10.666667 10.666667 0 0 1 10.666667 10.666666zM245.333333 725.333333H96a53.393333 53.393333 0 0 0-53.333333 53.333334v149.333333a53.393333 53.393333 0 0 0 53.333333 53.333333h149.333333a53.393333 53.393333 0 0 0 53.333334-53.333333v-149.333333a53.393333 53.393333 0 0 0-53.333334-53.333334z m10.666667 202.666667a10.666667 10.666667 0 0 1-10.666667 10.666667H96a10.666667 10.666667 0 0 1-10.666667-10.666667v-149.333333a10.666667 10.666667 0 0 1 10.666667-10.666667h149.333333a10.666667 10.666667 0 0 1 10.666667 10.666667z m672-202.666667h-149.333333a53.393333 53.393333 0 0 0-53.333334 53.333334v149.333333a53.393333 53.393333 0 0 0 53.333334 53.333333h149.333333a53.393333 53.393333 0 0 0 53.333333-53.333333v-149.333333a53.393333 53.393333 0 0 0-53.333333-53.333334z m10.666667 202.666667a10.666667 10.666667 0 0 1-10.666667 10.666667h-149.333333a10.666667 10.666667 0 0 1-10.666667-10.666667v-149.333333a10.666667 10.666667 0 0 1 10.666667-10.666667h149.333333a10.666667 10.666667 0 0 1 10.666667 10.666667z m-352-202.666667H437.333333a53.393333 53.393333 0 0 0-53.333333 53.333334v149.333333a53.393333 53.393333 0 0 0 53.333333 53.333333h149.333334a53.393333 53.393333 0 0 0 53.333333-53.333333v-149.333333a53.393333 53.393333 0 0 0-53.333333-53.333334z m10.666666 202.666667a10.666667 10.666667 0 0 1-10.666666 10.666667H437.333333a10.666667 10.666667 0 0 1-10.666666-10.666667v-149.333333a10.666667 10.666667 0 0 1 10.666666-10.666667h149.333334a10.666667 10.666667 0 0 1 10.666666 10.666667z"
                     fill="#fff" p-id="2827"></path>
-            </svg>
+            </svg> -->
+            <img src="/public/聚焦点.png" alt="" class="gridimg">
             网格分析
         </div>
         <div class="control">
-            <el-button v-on:click="attaindata()">{{ $store.state.button2 }}</el-button>
-            <el-button v-on:click="creategrid()">构建格网</el-button>
-            <el-button v-on:click="rendergrid()">计算格网</el-button>
-            <el-button v-on:click="deletedata()">删除格网</el-button>
+            <el-button v-on:click="attaindata()" class="button_1">{{ $store.state.button2 }}</el-button>
+            <el-button v-on:click="creategrid()" class="button_1">构建格网</el-button>
+            <el-button v-on:click="rendergrid()" class="button_1">计算格网</el-button>
+            <el-button v-on:click="deletedata()" class="button_1">删除格网</el-button>
         </div>
         <div class="gridcontrol">
             <svg t="1712630190921" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +285,7 @@ export default {
         attaindata() {
             if (this.$store.state.button2 === '加载数据') {
                 features = new FeatureLayer({
-                    url: 'https://localhost:6443/arcgis/rest/services/project1/population/FeatureServer/1',
+                    url: '/arcgis/arcgis/rest/services/project1/population/FeatureServer/1',
                     outFields: ['*'],
                     popupTemplate: {  // 开启 popup
                         title: "{gid}",
@@ -333,6 +334,28 @@ export default {
 }
 </script>
 <style scoped>
+@font-face {
+    font-family: 'Source Han Sans regular Bold';
+    src: url('src\assets\font\SourceHanSansCN-Regular.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* 优化字体加载 */
+}
+/* .button_1{
+    background-color: #1f445f;
+    
+} */
+.icon{
+    position: relative;
+    top: 4px;
+}
+.gridimg{
+    object-fit: contain;
+    width: auto;
+    height: 18px;
+    position: relative;
+    top: 4px;
+}
 .control>*:hover {
     background-color: #dd5a06;
     cursor: pointer;
@@ -343,6 +366,7 @@ export default {
     color: white;
     height: 30px;
     line-height: 30px;
+    font-family: 'Source Han Sans regular Bold';
 
 }
 
@@ -368,7 +392,7 @@ export default {
 }
 
 .control>* {
-    background-color: rgb(0, 0, 0, 1);
+    background-color: #1f445f;
     margin: 10px;
     font-size: 16px;
     font-weight: 800;

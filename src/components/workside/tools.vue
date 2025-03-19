@@ -6,17 +6,18 @@
         <span class="tool_title" style='font-size: 16px; color: white;margin: 0.5vh 1.5vw;'>挑选任务路段</span>
         <div style="display: flex; flex-direction: row; margin:  0.5vh 1.5vw;">
             <div class="draw_tools" :class="this.toolstoggle == 'circle' ? 'visited' : ''" v-on:click="tools('circle')">
-                <svg t="1717317287016" class="icon" viewBox="0 0 1194 1024" version="1.1"
+                <!-- <svg t="1717317287016" class="icon" viewBox="0 0 1194 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="2232" width="36" height="36">
                     <path
                         d="M597.333333 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512z m0-914.2784A402.2784 402.2784 0 1 0 999.611733 512 402.2784 402.2784 0 0 0 597.333333 109.7216zM597.333333 768a256 256 0 1 1 256-256 256 256 0 0 1-256 256z m0-402.2784A146.2784 146.2784 0 1 0 743.611733 512 146.2784 146.2784 0 0 0 597.333333 365.7216z"
                         fill="#ffffff" p-id="2233"></path>
-                </svg>
+                </svg> -->
+                <img src="/public/画圆形.png" alt="" class="circle"
             </div>
 
             <div class="draw_tools" :class="this.toolstoggle == 'rectangle' ? 'visited' : ''"
                 v-on:click="tools('rectangle')">
-                <svg t="1717317331372" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                <!-- <svg t="1717317331372" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="3373" width="36" height="36">
                     <path
                         d="M273.9 168.3H739v37.1H273.9zM273.9 819.6H739v37.1H273.9zM165.812 740.898v-465.1h37.1v465.1zM821.11 740.896v-465.1h37.1v465.1z"
@@ -24,28 +25,31 @@
                     <path
                         d="M184.7 66.2c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.5c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.7-37 82.7-82.7 82.7zM184.7 717.5c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.6c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.6-37 82.7-82.7 82.7zM840 717.5c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.6c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.6-37 82.7-82.7 82.7zM840 66.2c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.5c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.7-37 82.7-82.7 82.7z"
                         fill="#ffffff" p-id="3375"></path>
-                </svg>
+                </svg> -->
+                <img src="/public/画矩形.png" alt="">
             </div>
 
             <div class="draw_tools" :class="this.toolstoggle == 'polygon' ? 'visited' : ''"
-                v-on:click="tools('polygon')">
-                <svg t="1740121207551" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                 v-on:click="tools('polygon')">
+                <!-- <svg t="1740121207551" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="5003" width="36" height="36">
                     <path
                         d="M96 640.256L571.168 96 928 458.304V928H96v-287.744z m32 12V896h768V471.424L572.576 143.04 128 652.256z"
                         fill="#ffffff" p-id="5004"></path>
-                </svg>
+                </svg>  -->
+                <img src="/public/多边形.png" alt="" class="duobianxing">
             </div>
             <div class="draw_tools" :class="this.toolstoggle == 'point' ? 'visited' : ''" v-on:click="tools('point')">
-                <svg t="1717317366495" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                <!-- <svg t="1717317366495" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="4457" width="36" height="36">
                     <path d="M512 624a112 112 0 1 0 0-224 112 112 0 0 0 0 224z" p-id="4458" fill="#ffffff"></path>
-                </svg>
+                </svg> -->
+                <img src="/public/位置.png" alt="">
             </div>
         </div>
         <div class="control">
-            <el-button plain @click="clear()">清空</el-button>
-            <el-button v-on:click="Workline()">确定</el-button>
+            <el-button plain @click="clear()" class="button_1">清空</el-button>
+            <el-button v-on:click="Workline()" class="button_1">确定</el-button>
         </div>
     </div>
 </template>
@@ -306,7 +310,7 @@ export default {
         },
         attainLayer() {
             layer = new FeatureLayer({
-                url: 'https://localhost:6443/arcgis/rest/services/project1/route/FeatureServer/0',
+                url: '/arcgis/arcgis/rest/services/project1/route/FeatureServer/0',
                 id: 'WorkingLayer',
                 renderer: bodyrender,
                 fields: [
@@ -372,7 +376,7 @@ export default {
             // 执行查询
             layer.queryFeatures(query).then(function (results) {
 
-                if (!results.features[0]) {
+                if (!results.features[0]&&legend) {
                     legend = new Legend({
                         view: view,
                         layerInfos: [{
@@ -669,15 +673,41 @@ function createPolygon(events) {
 }
 </script>
 <style scoped>
+.button_1{
+    background-color: #1f445f;
+    color: #1f445f;
+}
 .tool_title {
     font-weight: 700;
     font-size: 16px;
     font-family: '楷体';
 
 }
-
+.circle{
+    contain: content;
+    height: 44px;
+    width: auto;
+    position: relative;
+    top: -4px ;left: -4px;
+}
+.duobianxing{
+  height: 40px;
+  width: auto;
+  position: relative;
+  top: -2px ;left: -2px;
+}
 .draw_tools {
-    background-color: black;
+    background-color: #1f445f;
+    border-left: 0.5px solid gray;
+}
+.duobianxing{
+  height: 40px;
+  width: auto;
+  position: relative;
+  top: -2px ;left: -2px;
+}
+.draw_tools {
+    background-color: #1f445f;
     border-left: 0.5px solid gray;
     display: flex;
     flex-direction: row;
@@ -735,7 +765,7 @@ function createPolygon(events) {
 }
 
 .control>* {
-    background-color: rgb(0, 0, 0, 1);
+    background-color:#1f445f;
     font-size: 16px;
     font-weight: 800;
     color: white;
