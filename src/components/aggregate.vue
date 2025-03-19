@@ -13,23 +13,27 @@
                 <div class="clear" v-on:click="this.editdata = null">清空</div>
                 <div class="left_top_content">
                     <div v-on:click="edit_data('assemble')" :class="editdata == 'assemble' ? 'active' : ''">
-                        <div style="margin: 5px;"><svg t="1716640494773" class="icon" viewBox="0 0 1024 1024"
+                       <div style="margin-bottom: 8px; display: flex; flex-direction: column; align-items: center; gap: 8px;"> <!-- <svg t="1716640494773" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4393" width="20" height="20">
                                 <path
                                     d="M614.4 966.4c-89.6 0-172.8-32-243.2-89.6C243.2 768 192 582.4 192 512c0-76.8 38.4-243.2 140.8-352 64-64 140.8-102.4 224-102.4 83.2 0 140.8 19.2 179.2 64 57.6 70.4 38.4 172.8 19.2 268.8-6.4 38.4-19.2 83.2-19.2 121.6 0 32 19.2 76.8 38.4 121.6 38.4 83.2 76.8 172.8 38.4 243.2-25.6 44.8-70.4 70.4-134.4 83.2-19.2 6.4-38.4 6.4-64 6.4zM556.8 185.6c-51.2 0-96 25.6-134.4 64C345.6 332.8 320 467.2 320 505.6c0 44.8 38.4 192 134.4 275.2 57.6 51.2 128 64 204.8 51.2 25.6-6.4 38.4-12.8 38.4-19.2 12.8-19.2-19.2-89.6-38.4-134.4-19.2-51.2-51.2-115.2-44.8-172.8 0-44.8 12.8-96 19.2-140.8 12.8-64 25.6-140.8 6.4-166.4-12.8-6.4-38.4-12.8-83.2-12.8z"
                                     p-id="4394" fill="#ffffff"></path>
-                            </svg></div>聚集点
+                            </svg> -->
+                            <img src="/public/聚焦点.png" alt="" class="focus">聚集点</div>
                     </div>
                     <div v-on:click="edit_data('snowarea')" :class="editdata == 'snowarea' ? 'active' : ''">
-                        <div style="margin: 5px;"><svg t="1716640719304" class="icon" viewBox="0 0 1028 1024"
+                       <div style="margin-bottom: 4px; display: flex; flex-direction: column; align-items: center; gap: 8px;"></div> <!-- <svg t="1716640719304" class="icon" viewBox="0 0 1028 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4653" width="20" height="20">
                                 <path
                                     d="M302.933333 727.893333a1995.093333 1995.093333 0 0 0 184.32 175.786667 23.04 23.04 0 0 0 30.72 0 2110.293333 2110.293333 0 0 0 184.32-175.786667h29.013334L1024 1024H0l267.946667-296.106667h34.986666zM170.666667 315.733333a331.093333 331.093333 0 0 1 661.333333 0c0 136.533333-104.106667 294.4-314.026667 473.6a23.04 23.04 0 0 1-31.573333 0C277.333333 610.133333 170.666667 452.266667 170.666667 315.733333z m170.666666-14.506666a155.306667 155.306667 0 1 0 45.226667-111.786667A153.6 153.6 0 0 0 341.333333 301.226667z"
                                     fill="#fff" p-id="4654"></path>
-                            </svg></div>堆雪区域
-                    </div>
+                            </svg> -->
+                        <img src="/public/堆雪区域.png" alt=""class="snowareas">  <div style="margin-top: 7px;">堆雪区域</div>
+                            </div>
+                      
                     <div v-on:click="edit_data('pop')" :class="editdata == 'pop' ? 'active' : ''">
-                        <div style="margin: 5px;"><svg t="1716641109699" class="icon" viewBox="0 0 1024 1024"
+                        <div style="margin-bottom: 8px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                            <!-- <svg t="1716641109699" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5761" width="20" height="20">
                                 <path
                                     d="M512 533.333333a192 192 0 1 1 0-384 192 192 0 0 1 0 384z m0-42.666666a149.333333 149.333333 0 1 0 0-298.666667 149.333333 149.333333 0 0 0 0 298.666667z"
@@ -41,20 +45,27 @@
                                     fill="#ffffff" p-id="5764"></path>
                                 <path d="M597.333333 682.666667l213.333334 0 0 42.666666-213.333334 0 0-42.666666Z"
                                     fill="#ffffff" p-id="5765"></path>
-                            </svg></div>员工
+                            </svg> -->
+                        </div>
+                        <img src="/public/员工.png" alt="" class="people">
+                        <div style="margin-top: 7px;">员工</div>
                     </div>
                     <div v-on:click="edit_data('machine')" :class="editdata == 'machine' ? 'active' : ''">
-                        <div style="margin: 5px;"><svg t="1716641198362" class="icon" viewBox="0 0 1024 1024"
+                        <div style="margin-bottom: 6px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                            <!-- <svg t="1716641198362" class="icon" viewBox="0 0 1024 1024"
                                 version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8268" width="20" height="20">
                                 <path
                                     d="M964.6592 363.9808l-128.7168-130.9184a31.488 31.488 0 0 0-23.2448-10.24H383.0784A33.1776 33.1776 0 0 0 350.1056 256v74.5984h-111.104a47.7184 47.7184 0 0 0-32.9728 12.6976l-140.544 130.048a47.9744 47.9744 0 0 0-15.8208 35.84v139.6736a48.7424 48.7424 0 0 0 48.3328 48.3328H179.2a118.8864 118.8864 0 0 0 235.8784 0.4608h236.3392a118.9376 118.9376 0 0 0 235.8784 0h11.008a33.9968 33.9968 0 0 0 29.8496-19.3536l42.5984-89.6a31.6928 31.6928 0 0 0 3.5328-14.08V386.816a32.6656 32.6656 0 0 0-9.6256-22.8352zM115.5584 516.8128L245.76 396.4928h104.3456v235.008H115.5584z m792.8832 50.0736l-30.72 64.6144H416V289.28H798.72l109.824 111.5648z"
                                     fill="#ffffff" p-id="8269"></path>
-                            </svg></div>机器
+                            </svg> -->
+                        </div>
+                        <img src="/public/车牌.png" alt="" class="machiness">
+                        <div style="margin-top: 4px;">机器</div>
                     </div>
                 </div>
             </div>
             <div class="left_bottom">
-                最近任务审阅情况
+                任务审阅情况
                 <el-scrollbar>
                     <div class="left_bottom_content">
                         <el-timeline>
@@ -166,7 +177,7 @@ export default {
     methods: {
         changeSelect(value) {
             var data = toRaw(value)
-            this.initGroup(data, this.avargeData, { groupwork: data.workCompCount, citywork: this.citywork })
+            this.initGroup(data, this.avargeData, { groupwork: data.workCompCount, citywork: this.citywork-data.workCompCount })
         },
         tableDataAttain() {
             axios.get('/api/map/databaseGroup').then(res => {
@@ -195,7 +206,7 @@ export default {
                 console.log(avargeData.workCompCount,avargeData.workCount)
                 this.avargeData = avargeData
                 this.citywork = obj.workCompCount
-                this.initGroup(this.tableData[0], this.avargeData, { groupwork: this.tableData[0].workCompCount, citywork: this.citywork })
+                this.initGroup(this.tableData[0], this.avargeData, { groupwork: this.tableData[0].workCompCount, citywork: this.citywork-this.tableData[0].workCompCount})
             })
         },
         closescreen() {
@@ -217,11 +228,9 @@ export default {
             })
         },
         initGroup(groupdata, avargeData, work) {
-            console.log(groupdata,avargeData)
             var max = Math.max(groupdata.workCount,groupdata.popnum)
             max = Math.max(avargeData.popnum,max)
             max = Math.max(avargeData.workCount,max)
-            console.log(work)
             if (!groupEcharts) {
                 // 基于准备好的dom，初始化echarts实例
                 groupEcharts = echarts.init(document.getElementById('groupEcharts'));
@@ -257,11 +266,11 @@ export default {
                     // 设置数据系列
                     data: [
                         {
-                            value: [((groupdata.timelyCount / groupdata.workCompCount).toFixed(3)*100), ((groupdata.workCompCount / groupdata.workCount).toFixed(3)*100), groupdata.workCount, ((groupdata.workCompCount / groupdata.submitCount).toFixed(3)*100), groupdata.popnum],
+                            value: [((groupdata.timelyCount / groupdata.workCompCount).toFixed(3)*100), ((groupdata.workCompCount / groupdata.workCount).toFixed(3)*100), groupdata.workCount, ((groupdata.workCompCount / groupdata.submitcount).toFixed(3)*100), groupdata.popnum],
                             name: '小组水平'
                         },
                         {
-                            value: [((avargeData.timelyCount / avargeData.workCompCount).toFixed(3)*100), ((avargeData.workCompCount / avargeData.workCount).toFixed(3)*100), avargeData.workCount, ((avargeData.workCompCount / avargeData.submitCount).toFixed(3)*100), avargeData.popnum],
+                            value: [((avargeData.timelyCount / avargeData.workCompCount).toFixed(3)*100), ((avargeData.workCompCount / avargeData.workCount).toFixed(3)*100), avargeData.workCount, ((avargeData.workCompCount / avargeData.submitcount).toFixed(3)*100), avargeData.popnum],
                             name: '平均水平'
                         }
                     ]
@@ -282,6 +291,7 @@ export default {
                         color: "#fff"
                     },
                 },
+                tooltip: {},
                 legend: {
                     top: '5%',
                     left: 'center',
@@ -555,6 +565,34 @@ function processtime(timestamp) {
 
 </script>
 <style scoped>
+@font-face {
+    font-family: 'Source Han Sans regular Bold';
+    src: url('src\assets\font\SourceHanSansCN-Regular.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* 优化字体加载 */
+}
+.machiness{
+    object-fit: contain;
+    width: auto;
+    height: 36px;
+}
+.people{
+    object-fit: contain;
+    width: auto;
+    height: 30px;
+}
+.snowareas{
+    object-fit: contain;
+    width: auto;
+    height: 30px;
+}
+.focus {
+    object-fit: contain;
+    width: auto;
+    height: 32px;
+
+}
 .groupEcharts {
     flex: 1;
 }

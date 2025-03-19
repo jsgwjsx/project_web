@@ -112,6 +112,13 @@ export default {
 }
 </script>
 <style>
+@font-face {
+    font-family: 'Source Han Sans regular Bold';
+    src: url('src\assets\font\SourceHanSansCN-Regular.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* 优化字体加载 */
+}
 .mapbody{
   width: 95vw;
   height: 88vh;
@@ -166,6 +173,8 @@ export default {
   height: 6vh;
   line-height: 6vh;
   margin-top: 5px;
+  font-family:'Source Han Sans regular Bold';
+  font-weight: bold; 
 }
 
 .aggregateside {

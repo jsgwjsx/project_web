@@ -18,17 +18,18 @@
                         <div style="display: flex; flex-direction: row; margin: 5px 10px;">
                             <div class="draw_tools" :class="this.toolstoggle == 'circle' ? 'visited' : ''"
                                 v-on:click="tools('circle')">
-                                <svg t="1717317287016" class="icon" viewBox="0 0 1194 1024" version="1.1"
+                                <!-- <svg t="1717317287016" class="icon" viewBox="0 0 1194 1024" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" p-id="2232" width="20" height="20">
                                     <path
                                         d="M597.333333 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512z m0-914.2784A402.2784 402.2784 0 1 0 999.611733 512 402.2784 402.2784 0 0 0 597.333333 109.7216zM597.333333 768a256 256 0 1 1 256-256 256 256 0 0 1-256 256z m0-402.2784A146.2784 146.2784 0 1 0 743.611733 512 146.2784 146.2784 0 0 0 597.333333 365.7216z"
                                         fill="#333333" p-id="2233"></path>
-                                </svg>
+                                </svg> -->
+                                <img src="/public/画圆形 (1).png" alt="" class="icon">
                             </div>
 
                             <div class="draw_tools" :class="this.toolstoggle == 'rectangle' ? 'visited' : ''"
                                 v-on:click="tools('rectangle')">
-                                <svg t="1717317331372" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                <!-- <svg t="1717317331372" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" p-id="3373" width="20" height="20">
                                     <path
                                         d="M273.9 168.3H739v37.1H273.9zM273.9 819.6H739v37.1H273.9zM165.812 740.898v-465.1h37.1v465.1zM821.11 740.896v-465.1h37.1v465.1z"
@@ -36,33 +37,37 @@
                                     <path
                                         d="M184.7 66.2c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.5c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.7-37 82.7-82.7 82.7zM184.7 717.5c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.6c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.6-37 82.7-82.7 82.7zM840 717.5c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.6c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.6-37 82.7-82.7 82.7zM840 66.2c-66.8 0-121 54.2-121 121s54.2 121 121 121 121-54.2 121-121-54.1-121-121-121z m-0.1 203.5c-45.7 0-82.7-37-82.7-82.7s37-82.7 82.7-82.7 82.7 37 82.7 82.7c0.1 45.7-37 82.7-82.7 82.7z"
                                         fill="#2c2c2c" p-id="3375"></path>
-                                </svg>
+                                </svg> -->
+                                <img src="/public/2点画矩形.png" alt="" class="iconjuxing">
                             </div>
 
                             <div class="draw_tools" :class="this.toolstoggle == 'polygon' ? 'visited' : ''"
                                 v-on:click="tools('polygon')">
-                                <svg t="1717317366495" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                <!-- <svg t="1717317366495" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" p-id="4457" width="20" height="20">
                                     <path d="M512 624a112 112 0 1 0 0-224 112 112 0 0 0 0 224z" p-id="4458"></path>
-                                </svg>
+                                </svg> -->
+                                <img src="/public/地图_画点.png" alt="" class="icondianwei">
                             </div>
 
                         </div>
-                        <span class="tool_title" style='font-size: 20px;'>辅助功能</span>
+                        <span class="tool_title" style='font-size: 20px;'>位置显示</span>
                         <div class="auxiliary">
                             <el-scrollbar height="100%"
-                                style="font-size: 14px;font-weight: 700;font-family: '楷体'; border: 1px solid black;">
+                                style="font-size: 14px;font-weight: 700;font-family: '楷体'; border: none;">
                                 <div v-for="(item, index) in name" :key="item" v-on:click="selectanalydata(index)"
-                                    style="width: 100%;height: 100%;" :class="selected(index) ? 'selected' : ''">
-                                    {{ `${index + 1}-${item} ` }}</div>
+                                    style="width: 100%;height: 100%; " :class="selected(index) ? 'selected' : ''" class="kuang">
+                                    {{ `${index + 1}-${item} ` }}
+                               
+                            </div>
                             </el-scrollbar>
                         </div>
                         <div class="analysefunction">
                             <el-button type="primary" style="flex: 1;"
-                                v-on:click="processor('intersect')">相交</el-button>
-                            <el-button type="primary" style="flex: 1;" v-on:click="processor('union')">合并</el-button>
+                                v-on:click="processor('intersect')" class="colorbu">相交</el-button>
+                            <el-button type="primary" style="flex: 1;" v-on:click="processor('union')" class="colorbu">合并</el-button>
                             <el-button type="primary" style="flex: 1;"
-                                v-on:click="processor('difference')">交集取反</el-button>
+                                v-on:click="processor('difference')" class="colorbu">交集取反</el-button>
                         </div>
                     </div>
                 </div>
@@ -113,11 +118,11 @@
             </div>
             <div class="close">
                 <el-button type="primary" style="position: relative; left:30%;margin: 10px;" v-on:click="cleardata()"
-                    v-if="pattern === 'control_tool'">清空</el-button>
+                    v-if="pattern === 'control_tool'" class="colorbu">清空</el-button>
                 <el-button type="primary" style="position: relative; left:30%;margin: 10px;" v-on:click='savedata()'
-                    v-if="pattern === 'control_tool'">保存</el-button>
+                    v-if="pattern === 'control_tool'" class="colorbu">保存</el-button>
                 <el-button type="primary" style="position: absolute; left:93%;margin: 10px;"
-                    v-on:click="close()">关闭</el-button>
+                    v-on:click="close()" class="colorbu">关闭</el-button>
             </div>
         </div>
 
@@ -742,6 +747,30 @@ function createPolygon(events) {
 
 </script>
 <style scoped>
+
+@font-face {
+    font-family: 'Source Han Sans regular Bold';
+    src: url('src\assets\font\SourceHanSansCN-Regular.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* 优化字体加载 */}
+.icon{
+    object-fit: contain;
+    height: 24px;
+    width: auto;
+    position: relative;
+    top: -2px; right: 2px;
+}
+.iconjuxing{
+    object-fit: contain;
+    height: 18px;
+    width: auto;
+    position: relative;
+    top: 2px;
+}
+.colorbu {
+    background-color: #1270A6;
+}
 .selected {
     background-color: #dd5a06;
 }
@@ -757,9 +786,15 @@ function createPolygon(events) {
 .auxiliary {
     display: flex;
     height: 50%;
-    margin: 5px;
+    /* margin: 5px; */
     width: 100%;
+    border-radius: 10px;
     flex-direction: column;
+    background-image: url('/public/da72ace60f85a51b00c4b10854be5a5.jpg');
+    background-size: 100% auto;
+    position: relative;
+    left: -6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input-item1 {
@@ -837,7 +872,9 @@ function createPolygon(events) {
 .tool_title {
     font-weight: 700;
     font-size: 16px;
-    font-family: '楷体';
+    font-family: 楷体;
+    position: relative;
+    left: -6px;
 
 }
 

@@ -27,7 +27,7 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            imageurl: 'http://localhost:8000/static',
+            imageurl: '/api/static',
             nickname:'',
             password:''
         }

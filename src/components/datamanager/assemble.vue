@@ -14,10 +14,10 @@
             <div class="content">
                 <div class="control_tool" v-if="pattern === 'control_tool'">
                     <div class="content_container">
-                        <span class="tool_title" style='font-size: 20px;'>基础功能</span>
+                        <span class="tool_title" style='font-size: 20px;'>定位地点</span>
                         <div class="draw_tools" :class="this.toolstoggle == 'point' ? 'visited' : ''"
                             v-on:click="tools('point')">
-                            <svg t="1716961630072" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            <!-- <svg t="1716961630072" class="icon" viewBox="0 0 1024 1024" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" p-id="2128" width="20" height="20">
                                 <path
                                     d="M512 512m-62.588477 0a62.588477 62.588477 0 1 0 125.176954 0 62.588477 62.588477 0 1 0-125.176954 0Z"
@@ -25,24 +25,25 @@
                                 <path
                                     d="M512 788.856515c-73.951269 0-143.475715-28.798906-195.766662-81.089853-52.29197-52.29197-81.089853-121.815393-81.089853-195.766662s28.797883-143.475715 81.089853-195.766662c52.290947-52.29197 121.816416-81.089853 195.766662-81.089853s143.475715 28.797883 195.767686 81.089853c52.290947 52.290947 81.08883 121.816416 81.088829 195.766662 0 73.951269-28.798906 143.474692-81.088829 195.766662-52.29197 52.290947-121.81744 81.089853-195.767686 81.089853z m0-502.54772c-124.446313 0-225.691205 101.243869-225.691205 225.691205 0 124.447337 101.243869 225.691205 225.691205 225.691205s225.691205-101.243869 225.691205-225.691205c0-124.447337-101.244892-225.691205-225.691205-225.691205z"
                                     p-id="2130"></path>
-                            </svg>
+                            </svg> -->
+                            <img src="/public/定位.png" alt="" class="position">
                         </div>
-                        <div class="tool_title" style="margin-left: 12px;">地点:
+                        <div class="tool_title" style="margin-left: 12px;">位置输出:
                             <p style="height: 50px;">&emsp;&emsp;{{ locationname }}</p>
                         </div>
                         <div>
                             <el-button type="primary" style="position: relative; left:50%;margin: 10px;"
-                                v-on:click="cleardata()">清空</el-button>
+                                v-on:click="cleardata()" class="colorbu">清空</el-button>
                             <el-button type="primary" style="position: relative; left:50%;margin: 10px;"
-                                v-on:click='savedata()'>保存</el-button>
+                                v-on:click='savedata()' class="colorbu">保存</el-button>
                         </div>
-                        <span class="tool_title" style='font-size: 20px;'>辅助功能</span>
+                        <span class="tool_title" style='font-size: 20px;'>生成聚集点</span>
                         <input type="text" name="password" placeholder="请输入地址" class="input-item" v-model="position">
                         <div>
                             <el-button type="primary" style="position: relative; left:50%;margin: 10px;"
-                                v-on:click="createdata()">生成</el-button>
+                                v-on:click="createdata()" class="colorbu">生成</el-button>
                             <el-button type="primary" style="position: relative; left:50%;margin: 10px;"
-                                v-on:click='savedata()'>保存</el-button>
+                                v-on:click='savedata()' class="colorbu">保存</el-button>
                         </div>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
                                             </svg>
                                         </el-button>
                                         <el-button type="danger" style="position: relative; left:44%;margin: 10px;"
-                                            v-on:click="deletedata(index)">删除</el-button>
+                                            v-on:click="deletedata(index)" class="colorbu">删除</el-button>
                                         <el-button :type="this.iseditable == true ? 'primary' : 'success'"
                                             style="position: relative; left:40%;margin: 10px;"
                                             v-on:click="this.iseditable == true ? submitdata(index) : updatedata(index)">{{ contenttitle }}</el-button>
@@ -91,8 +92,8 @@
                 </div>
             </div>
             <div class="close">
-                <el-button type="primary" style="position: relative; left:74%;margin: 10px;"
-                    v-on:click="close()">关闭</el-button>
+                <el-button type="primary" style="position: relative; left:74%;margin: 10px; background-color: #1270A6;"
+                    v-on:click="close()" >关闭</el-button>
             </div>
         </div>
 
@@ -348,6 +349,11 @@ function createPointGraphic(coordinates, re) {
 }
 </script>
 <style scoped>
+.position {
+    object-fit: contain;
+    weight:18px;
+    width: auto;
+}
 .input-item1 {
     position: relative;
     display: block;
@@ -404,7 +410,9 @@ function createPointGraphic(coordinates, re) {
     box-shadow: 1px 2px 0 grey;
     border-radius: 2px;
 }
-
+.colorbu {
+    background-color: #1270A6;
+}
 .draw_tools:hover {
     background-color: orange;
 }

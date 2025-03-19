@@ -6,12 +6,13 @@
         <div class="body">
             <div class='upper'>
                 <div class="two_title">
-                    <svg t="1711533742535" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    <!-- <svg t="1711533742535" class="icon" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="2159" width="18" height="18">
                         <path
                             d="M186.181818 651.636364H0V0h651.636364v186.181818h186.181818v186.181818h186.181818v651.636364H372.363636v-186.181818H186.181818v-186.181818z m465.454546-372.363637v372.363637H279.272727v93.090909h465.454546V279.272727h-93.090909z m186.181818 186.181818v372.363637H465.454545v93.090909h465.454546V465.454545h-93.090909zM93.090909 93.090909v465.454546h465.454546V93.090909H93.090909z"
                             fill="#bfbfbf" p-id="2160"></path>
-                    </svg>图层控制
+                    </svg> -->
+                    <img src="/public/图层管理-copy.png" alt="" class="manage">图层控制
                 </div>
                 <div>
                     <div class="button1" v-on:click="attaindata()">请求数据</div>
@@ -22,12 +23,13 @@
             </div>
             <div class='low'>
                 <div class="two_title">
-                    <svg t="1711534421694" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    <!-- <svg t="1711534421694" class="icon" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="5397" width="18" height="18">
                         <path
                             d="M955.069071 864.311021 740.015134 649.258107c-3.752464-3.751441-8.841366-5.860475-14.149255-5.860475-5.306866 0-10.395768 2.108011-14.149255 5.860475l-16.692171 16.692171-38.34226-38.34226c53.03796-59.810201 85.298711-138.442072 85.298711-224.478588 0-186.774871-151.952784-338.727655-338.727655-338.727655S64.527642 216.35456 64.527642 403.12943c0 186.775894 151.952784 338.728678 338.727655 338.728678 86.36909 0 165.276231-32.510438 225.170343-85.913718l38.303374 38.303374-17.34504 17.34504c-7.812943 7.813966-7.812943 20.48352 0 28.297486l215.051891 215.052914c3.753487 3.751441 8.841366 5.860475 14.149255 5.860475 5.306866 0 10.395768-2.108011 14.149255-5.860475l62.334697-62.334697C962.883037 884.794541 962.883037 872.124987 955.069071 864.311021zM104.546078 403.12943c0-164.709319 133.9999-298.709219 298.709219-298.709219s298.709219 133.9999 298.709219 298.709219S567.964616 701.839673 403.255297 701.839673 104.546078 567.838749 104.546078 403.12943zM878.585119 912.496463 691.829691 725.741036l34.036187-34.036187 186.755428 186.755428L878.585119 912.496463z"
                             fill="#bfbfbf" p-id="5398"></path>
-                    </svg>筛选
+                    </svg> -->
+                    <img src="/public/筛选.png" alt="" class="kongzhi">路网筛选
                 </div>
                 <div class="filtercontent">
                     <el-checkbox v-model="check.checked1" label="一级" size="large" class="black" />
@@ -37,7 +39,7 @@
                     <el-checkbox v-model="check.checkhighway" label="高速" size="large" class="black" />
                 </div>
                 <el-button type="primary" style="margin-left: 120px;" v-on:click="filters()"
-                    :disabled="this.disabled">筛选</el-button>
+                    :disabled="this.disabled" class="shaixuan">筛选</el-button>
             </div>
             <div class="toggle">当前模式:&emsp;<i style="font-size: 12px;"
                     :class='toggle ? "blue" : "grey"'>{{ togglename }}</i><el-switch v-model="toggle" style="margin: 10px;"
@@ -82,9 +84,9 @@ export default {
         },
         attaindata() {
             features = new FeatureLayer({
-                url: 'https://localhost:6443/arcgis/rest/services/project1/route/FeatureServer/0',
+                url: '/arcgis/arcgis/rest/services/project1/route/FeatureServer/0',
                 id:'lineLayer',
-                renderer: bodyrender,
+                renderer:bodyrender,
                 fields: [
                     {
                         name: 'name',
@@ -178,6 +180,40 @@ function filterquery(arr, grade) {
 }
 </script>
 <style scoped>
+@font-face {
+    font-family: 'Source Han Sans CN Bold';
+    src: url('public\font\SIyuanblack_CN-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Source Han Sans regular Bold';
+    src: url('src\assets\font\SourceHanSansCN-Regular.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* 优化字体加载 */
+}
+.kongzhi{
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    top: 4px;
+}
+.manage {
+    height: auto;
+    width: 18px;
+    object-fit: contain;
+    
+}
+.shaixuan {
+    font-family: 'Source Han Sans regular Bold';
+    font-size: 14px;
+    color: white;
+    background-color: #1f445f;
+    font-style: bold;
+}
+
 .grey {
     color: wheat;
 }
@@ -220,6 +256,7 @@ function filterquery(arr, grade) {
 }
 
 .button1 {
+    font-family: 'Source Han Sans regular Bold';
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -228,18 +265,20 @@ function filterquery(arr, grade) {
     border: none;
     width: 100px;
     height: 36px;
-    background-color: black;
+    background-color: #1f445f;
     font-weight: 800;
     margin: 10px;
     border: 0px solid white;
     border-radius: 5px;
     line-height: 36px;
+    
 
 }
 
 .button1:hover {
     background-color: #dd5a06;
     cursor: pointer;
+    
     opacity: 1;
 
 }
@@ -248,7 +287,9 @@ function filterquery(arr, grade) {
     display: inline-block;
     position: relative;
     color: white;
-
+    font-family: 'Source Han Sans CN Bold', sans-serif;
+    font-weight: bold; 
+    font-size: 18px;
 }
 
 .header {

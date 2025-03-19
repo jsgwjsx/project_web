@@ -126,7 +126,7 @@
                         </el-button>
                     </div>
                     <el-scrollbar>
-                        <div>
+                        <div >
                             <p v-for="item in content" :key="item" class="scrollbar-demo-item">
                                 <el-card class="card">
                                     <div
@@ -206,7 +206,7 @@
                                                 <div class="button_group">
                                                     <el-button type="primary" circle
                                                         v-on:click="LocationDriver(item, index)">
-                                                        <svg t="1739685613419" class="icon" viewBox="0 0 1024 1024"
+                                                        <!-- <svg t="1739685613419" class="icon" viewBox="0 0 1024 1024"
                                                             version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4189"
                                                             width="24" height="24">
                                                             <path
@@ -221,7 +221,8 @@
                                                             <path
                                                                 d="M10.666667 519.552a32 32 0 0 1 32-32h98.922666a32 32 0 1 1 0 64H42.666667a32 32 0 0 1-32-32zM850.410667 519.552a32 32 0 0 1 32-32H981.333333a32 32 0 0 1 0 64h-98.922666a32 32 0 0 1-32-32z"
                                                                 fill="#ffffff" p-id="4193"></path>
-                                                        </svg>
+                                                        </svg> -->
+                                                        <img src="/public/位置.png" alt="" class="loicon">
                                                     </el-button>
                                                     <el-button type="success" circle v-on:click="allocate(item)">
                                                         <svg t="1739687450671" class="icon" viewBox="0 0 1024 1024"
@@ -234,6 +235,7 @@
                                                                 d="M447.36 755.84l-64-64 419.2-381.44 44.8 45.44-400 400z"
                                                                 fill="#e6e6e6" p-id="4201"></path>
                                                         </svg>
+                                                        
                                                     </el-button>
                                                     <el-button type="danger" circle v-on:click="strikeApply(item.username)">
                                                         <svg t="1739687491379" class="icon" viewBox="0 0 1024 1024"
@@ -264,7 +266,7 @@
             </div>
             <div class="close">
                 <el-button type="primary" style="position: relative; left:70%;margin: 10px;"
-                    v-on:click="close()">关闭</el-button>
+                    v-on:click="close()" class="closeButton">关闭</el-button>
             </div>
         </div>
 
@@ -685,7 +687,7 @@ export default {
                         ],
                         popupTemplate: {
                             title: '名称',
-                            content: ` <img src="http://127.0.0.1:8000/static{avator}" alt="" style="width: 100px; height: 120px;">
+                            content: ` <img src="http://:8000/static{avator}" alt="" style="width: 100px; height: 120px;">
                         <div><b>姓名</b>:   {name}</div>
                         <div><b>电话</b>:   {telephone}</div>
                         <div><b>家庭住址</b>:  {home}</div>
@@ -720,6 +722,10 @@ export default {
 
 </script>
 <style scoped>
+
+.closeButton{
+    background-color: #1270A6 ;
+}
 .selectContent {
     max-height: 300px;
 }
@@ -732,7 +738,7 @@ export default {
 
 .title_header {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 12px;
     font-family: '宋体';
 }
 
@@ -961,7 +967,7 @@ export default {
 .content {
     width: 100%;
     height: 85%;
-    overflow: auto;
+    overflow:hidden;
 }
 
 .selectmachine {
@@ -993,7 +999,11 @@ export default {
     background-repeat: no-repeat;
     z-index: 3;
 }
-
+.loicon{
+    object-fit: contain;
+    height: 24px;
+    width: auto;
+}
 
 
 .title {

@@ -33,14 +33,16 @@
                 </el-button>
             </div>
         </div>
-        <el-scrollbar>
-            <div class="content ">
-                <div class="content_one" v-for="item in content" :key="item">
-                    {{ item }}
+            <el-scrollbar height="600">
+                <div class="content">
+                    <div class="content_one" v-for="item in content" :key="item">
+                        <el-card class="card" shadow="always">
+                              {{ item }}
+                        </el-card>
+                    </div>
+    
                 </div>
-
-            </div>
-        </el-scrollbar>
+            </el-scrollbar>
 
 
     </div>
@@ -145,6 +147,52 @@ export default {
 }
 </script>
 <style scoped>
+.card {
+    width: 100%;
+    height: 100%;
+ 
+}
+/* :deep(.el-card){
+    background-color:rgba(255, 255, 255,0) !important;
+    width: 98% !important;
+    height: 80px !important;
+    border: 1px solid white;
+}
+:deep(.el-card__body) {
+    width: calc(100%-8px);
+    padding: 5px;
+ 
+    background-color: rgba(255,255,255, 0); 
+   color: #FFFFFF; 
+    cursor: pointer;
+    border: none;
+    color: white;
+} */
+:deep(.el-card) {
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(18, 112, 166, 0.2), rgba(18, 112, 166, 0.1)) !important; 
+    width: 98% !important;
+    height: 80px !important;
+    border: 1px solid rgba(18, 112, 166, 0.3); /* 半透明蓝色边框 */
+    box-shadow: 0 8px 16px rgba(18, 112, 166, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2); /* 优化阴影 */
+    border-radius: 12px; /* 更大的圆角效果 */
+    backdrop-filter: blur(8px); /* 背景模糊效果 */
+    transition: all 0.3s ease; /* 添加过渡动画 */
+}
+
+:deep(.el-card:hover) {
+    box-shadow: 0 12px 24px rgba(18, 112, 166, 0.3), 0 8px 16px rgba(0, 0, 0, 0.3); /* 悬停时增强阴影 */
+    transform: translateY(-4px); /* 悬停时轻微上移 */
+}
+
+:deep(.el-card__body) {
+    width: calc(100% - 8px); /* 调整宽度 */
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0); /* 透明背景 */
+    color: #FFFFFF; /* 白色文字 */
+    cursor: pointer;
+    border: none; /* 无边框 */
+}
 .geolocation{
     background-color: rgba(0, 0,0, 0);
 }
@@ -157,15 +205,17 @@ export default {
     color: white;
     font-size: 18px;
     width: 90%;
-    min-height: 150px;
-    border-bottom: 1px solid white;
-    margin: 2px 10px;
+    min-height: 80px;
+    margin: 5px 10px;
 }
 
 .content {
     width: 100%;
-    height: 100%;
+    height: 60vh;
+    height: auto;
     overflow: auto;
+    border-radius: 8px; /* 圆角 */
+   
 }
 
 .selectmachine {

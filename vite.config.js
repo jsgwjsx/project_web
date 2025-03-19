@@ -8,9 +8,14 @@ export default defineConfig({
     open: true,//服务启动时自动在浏览器中打开应用
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: 'http://10.100.230.127:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      '/arcgis': {
+        target: 'http://10.100.230.127:6080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/arcgis/, ''),
       },
     },
   },
